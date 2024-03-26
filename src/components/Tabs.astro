@@ -53,7 +53,7 @@ const {
     const content = element.querySelector(".tabs-content");
     const tab_headers = [...header.children];
     const tab_contents = [...content.children];
-    tab_contents.forEach((x) => (x.style.display = "none"));
+    tab_contents.forEach((tab_content) => (tab_content.style.display = "none"));
     let current_tab_index = -1;
 
     function setTab(index) {
@@ -68,8 +68,8 @@ const {
       current_tab_index = index;
     }
 
-    let default_tab_index = tab_headers.findIndex((x) => {
-      return [...x.classList].indexOf("default-tab") > -1;
+    let default_tab_index = tab_headers.findIndex((tab_header) => {
+      return [...tab_header.classList].indexOf("default-tab") > -1;
     });
 
     default_tab_index = default_tab_index === -1 ? 0 : default_tab_index;
