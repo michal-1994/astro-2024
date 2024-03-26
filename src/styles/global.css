@@ -66,6 +66,10 @@ h3 {
   display: none;
 }
 
+.page-content {
+  padding: 2rem 0;
+}
+
 @media (max-width: 960px) {
   .logos-small {
     display: block;
