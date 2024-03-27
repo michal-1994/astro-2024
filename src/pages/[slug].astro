@@ -1,0 +1,38 @@
+---
+import Card from "@components/Card.astro";
+import Layout from "@layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const posts: any[] = await Astro.glob("../posts/*.md");
+
+  return posts.map((post: any) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+};
+
+const { Content, frontmatter } = Astro.props.post;
+---
+
+<Layout title={frontmatter.title}>
+  <section class='page-content'>
+    <div class='container'>
+      <Card>
+        <a class='btn' href='/blog'>Go Back</a>
+        <br />
+        <br />
+        <h2>{frontmatter.title}</h2>
+        <div>
+          Written by <strong>{frontmatter.author} </strong> on {
+            new Date(frontmatter.date).toLocaleDateString()
+          }
+        </div>
+        <Content />
+      </Card>
+    </div>
+  </section>
+</Layout>
