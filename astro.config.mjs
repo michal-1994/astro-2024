@@ -1,8 +1,11 @@
-import { defineConfig } from 'astro/config';
+/** @format */
+
+import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [react()]
+  integrations: [react()],
+  site: "https://michal-1994.github.io",
+  base: process.env.NODE_ENV === "production" ? "/astro-2024/" : "/",
 });

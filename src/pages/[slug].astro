@@ -1,9 +1,10 @@
 ---
 import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
+import { BASE_URL } from "@constants/api";
 
 export const getStaticPaths = async () => {
-  const posts: any[] = await Astro.glob("../posts/*.md");
+  const posts: any[] = await Astro.glob("@posts/*.md");
 
   return posts.map((post: any) => ({
     params: {
@@ -22,7 +23,7 @@ const { Content, frontmatter } = Astro.props.post;
   <section class='page-content'>
     <div class='container'>
       <Card>
-        <a class='btn' href='/blog'>Go Back</a>
+        <a class='btn' href={`${BASE_URL}blog`}>Go Back</a>
         <br />
         <br />
         <h2>{frontmatter.title}</h2>

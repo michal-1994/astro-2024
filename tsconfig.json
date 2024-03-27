@@ -11,17 +11,20 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
       "@images/*": [
         "src/images/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
       ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
       "@posts/*": [
         "src/posts/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
       ],
     },
     "jsx": "react-jsx",

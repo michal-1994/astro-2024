@@ -2,6 +2,7 @@
 import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
 import Showcase from "@components/Showcase.astro";
+import { BASE_URL } from "@constants/api";
 
 const posts = await Astro.glob("@posts/*.md");
 ---
@@ -19,7 +20,7 @@ const posts = await Astro.glob("@posts/*.md");
               {new Date(post.frontmatter.date).toLocaleDateString()}
             </div>
             <p>{post.frontmatter.excerpt}</p>
-            <a class='btn' href={`/${post.frontmatter.slug}`}>
+            <a class='btn' href={`${BASE_URL}${post.frontmatter.slug}`}>
               Read More
             </a>
           </Card>
