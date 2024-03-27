@@ -7,7 +7,10 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "predeploy": "npm run build --base-href=/astro-2024/",
+    "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d dist/",
+    "postdeploy": "echo 'Deploy finished successful'"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -20,6 +23,8 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.6.1"
+    "@astrojs/ts-plugin": "^1.6.1",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.1.1"
   }
 }
